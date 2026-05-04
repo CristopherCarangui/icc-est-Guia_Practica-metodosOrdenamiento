@@ -5,9 +5,10 @@ public class App {
         int opcion;
         runBubbleSortIns();
         runBubbleSortshell();
-        int [] array = {12,-7,25,0,-15,33,19,-55,5,48,-3};
+        int [] array = {12,-7,25,0,-15,33,19,-22,5,48,-3};
         BubbleSortIns bSortIns = new BubbleSortIns(array);
-        BubbleSortshell bSortshell = new BubbleSortshell(array);
+        BubbleSortshell bSortshellasc = new BubbleSortshell(array.clone());
+        BubbleSortshell bSortshelldes = new BubbleSortshell(array.clone());
         do{
             System.out.println("==== Programa de Ordenamiento =====");
             System.out.println("1.Ejecutar Ordenamientos");
@@ -40,11 +41,11 @@ public class App {
                             System.out.println("false");
                             String insert = teclado.nextLine();
                             if(insert.equals("true")){
-                                bSortshell.printArreglo();
-                                bSortshell.sortShellAscendente();
+                                bSortshellasc.printArreglo();
+                                bSortshellasc.sortShellAscendente();
                             } else if (insert.equals("false")){
-                                bSortshell.printArreglo();
-                                bSortshell.sortShellDescendente();
+                                bSortshelldes.printArreglo();
+                                bSortshelldes.sortShellDescendente();
                             }
                             break;
                         }
