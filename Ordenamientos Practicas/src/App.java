@@ -5,7 +5,7 @@ public class App {
         int opcion;
         runBubbleSortIns();
         runBubbleSortshell();
-        int [] array = {12,-7,25,0,-15,33,19,-55,5,48,-3};
+        int [] array = {12,-7,25,0,-15,33,19,-22,5,48,-3};
         BubbleSortIns bSortIns = new BubbleSortIns(array);
         BubbleSortshell bSortshell = new BubbleSortshell(array);
         do{
