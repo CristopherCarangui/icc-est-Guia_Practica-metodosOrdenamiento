@@ -6,7 +6,8 @@ public class App {
         runBubbleSortIns();
         runBubbleSortshell();
         int [] array = {12,-7,25,0,-15,33,19,-22,5,48,-3};
-        BubbleSortIns bSortIns = new BubbleSortIns(array);
+        BubbleSortIns bSortInsasc = new BubbleSortIns(array.clone());
+        BubbleSortIns bSortInsdes = new BubbleSortIns(array.clone());
         BubbleSortshell bSortshellasc = new BubbleSortshell(array.clone());
         BubbleSortshell bSortshelldes = new BubbleSortshell(array.clone());
         do{
@@ -27,11 +28,11 @@ public class App {
                             System.out.println("false");
                             String insert = teclado.nextLine();
                             if(insert.equals("true")){
-                                bSortIns.printArreglo();
-                                bSortIns.sortInsAscedente();
+                                bSortInsasc.printArreglo();
+                                bSortInsasc.sortInsAscedente();
                             } else if (insert.equals("false")){
-                                bSortIns.printArreglo();
-                                bSortIns.sortInsDescedente();
+                                bSortInsdes.printArreglo();
+                                bSortInsdes.sortInsDescedente();
                             }
                             break;
                         }

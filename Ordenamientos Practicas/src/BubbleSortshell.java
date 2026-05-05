@@ -22,12 +22,12 @@ public class BubbleSortshell{
                 int A = j-gap;
                 int B = j;
                 if(!(j>=gap && array[j-gap] > aux)){
-                    System.out.println("\tgap- " + gap + "a- " + A + "b-" + B+ 
+                    System.out.println("\tgap=" + gap + "a- " + A + "b-" + B+ 
                                        "[a]= " + array[A] + "[b]= " +  aux + "cambio-no");
                 }
                 contComparaciones++;
                 while (j>=gap && array[j-gap] > aux){
-                    System.out.println("\tgap- " + gap + "a- " + A + "b-" + B+ 
+                    System.out.println("\tgap=" + gap + "a- " + A + "b-" + B+ 
                                        "[a]= " + array[A] + "[b]= " +  aux + "cambio-si");
                     cambios++;
                     array[j] = array[j-gap];
