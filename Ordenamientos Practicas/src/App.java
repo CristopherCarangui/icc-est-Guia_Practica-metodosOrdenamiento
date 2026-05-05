@@ -6,10 +6,6 @@ public class App {
         runBubbleSortIns();
         runBubbleSortshell();
         int [] array = {12,-7,25,0,-15,33,19,-22,5,48,-3};
-        BubbleSortIns bSortInsasc = new BubbleSortIns(array.clone());
-        BubbleSortIns bSortInsdes = new BubbleSortIns(array.clone());
-        BubbleSortshell bSortshellasc = new BubbleSortshell(array.clone());
-        BubbleSortshell bSortshelldes = new BubbleSortshell(array.clone());
         do{
             System.out.println("==== Programa de Ordenamiento =====");
             System.out.println("1.Ejecutar Ordenamientos");
@@ -28,11 +24,11 @@ public class App {
                             System.out.println("false");
                             String insert = teclado.nextLine();
                             if(insert.equals("true")){
-                                bSortInsasc.printArreglo();
-                                bSortInsasc.sortInsAscedente();
+                                BubbleSortIns bAsc = new BubbleSortIns(array.clone());
+                                bAsc.sortInsAscedente();
                             } else if (insert.equals("false")){
-                                bSortInsdes.printArreglo();
-                                bSortInsdes.sortInsDescedente();
+                                BubbleSortIns bDes = new BubbleSortIns(array.clone());
+                                bDes.sortInsDescedente();
                             }
                             break;
                         }
@@ -42,11 +38,11 @@ public class App {
                             System.out.println("false");
                             String insert = teclado.nextLine();
                             if(insert.equals("true")){
-                                bSortshellasc.printArreglo();
-                                bSortshellasc.sortShellAscendente();
+                                BubbleSortshell bAsc = new BubbleSortshell(array.clone());
+                                bAsc.sortShellAscendente();
                             } else if (insert.equals("false")){
-                                bSortshelldes.printArreglo();
-                                bSortshelldes.sortShellDescendente();
+                                BubbleSortshell bDes = new BubbleSortshell(array.clone());
+                                bDes.sortShellDescendente();
                             }
                             break;
                         }

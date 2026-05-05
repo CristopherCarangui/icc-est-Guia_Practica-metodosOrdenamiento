@@ -21,23 +21,32 @@ public class BubbleSortshell{
                 printArregloForm();
                 int A = j-gap;
                 int B = j;
-                if(!(j>=gap && array[j-gap] > aux)){
-                    System.out.println("\tgap=" + gap + "a- " + A + "b-" + B+ 
-                                       "[a]= " + array[A] + "[b]= " +  aux + "cambio-no");
-                }
                 contComparaciones++;
+                if(!(j>=gap && array[j-gap] > aux)){
+                    System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                        "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=no");
+                }
+                boolean saltos = true;
                 while (j>=gap && array[j-gap] > aux){
-                    System.out.println("\tgap=" + gap + "a- " + A + "b-" + B+ 
-                                       "[a]= " + array[A] + "[b]= " +  aux + "cambio-si");
-                    cambios++;
+                    if (saltos){
+                        System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                            "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=si");
+                        saltos = false;
+                    }else{
+                        System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                            "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=si");
+                    }
                     array[j] = array[j-gap];
+                    cambios++;
                     j-=gap;
                     contComparaciones++;
-                    if (j>=gap && array[j-gap]>aux){
-                        A = j-gap;
+                }
+                if (!saltos){
+                        A = j-gap>=0 ? j-gap:0;
                         B = j;
-                        System.out.println("\t\t\t\t\t\t");
-                    }
+                        printArregloDez(A, B);
+                        System.out.println("\tgap=" + gap + "\ta=" + A + "\tb=" + B +
+                            "\t[a]=" + (j-gap>=0?array[j-gap]:array[0]) + "\t[b]=" + aux + "\tcambio=no");
                 }
                 array[j] = aux;
                 interacion++;
@@ -67,24 +76,37 @@ public class BubbleSortshell{
                 printArregloForm();
                 int A = j-gap;
                 int B = j;
-                if(!(j>=gap && array[j-gap] < aux)){
-                    System.out.println("\tgap= "+ gap + "a- " + A + "b-" + B+ 
-                                       "[a]= " + array[A] + "[b]= " +  aux + "cambio-no");
-                }
                 contComparacionesDes++;
+                if(!(j>=gap && array[j-gap] < aux)){
+                    System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                        "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=no");
+                }
+                boolean saltosDes =true;
                 while (j>=gap && array[j-gap] < aux){
-                    System.out.println("\tgap= "+ gap + "a- " + A + "b-" + B+ 
-                                       "[a]= " + array[A] + "[b]= " +  aux + "cambio-si");
-                    cambiosDes++;
+                    A = j-gap;
+                    B = j;
+                    if (saltosDes){
+                        System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                            "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=si");
+                        saltosDes = false;
+                    }else{
+                        printArregloDez(A,B);
+                        System.out.println("\tgap=" + gap + "\ta= " + A + "\tb=" + B+ 
+                            "\t[a]= " + array[A] + "\t[b]= " +  aux + "\tcambio=si");
+                    }
                     array[j] = array[j-gap];
+                    cambiosDes++;
                     j-=gap;
                     contComparacionesDes++;
-                    if (j>=gap && array[j-gap]<aux){
-                        A = j-gap;
-                        B = j;
-                        System.out.println("\t\t\t\t\t\t");
-                    }
+                   
     
+                }
+                if (!saltosDes){
+                        A = j-gap>=0 ? j-gap:0;
+                        B = j;
+                        printArregloDez(A, B);
+                        System.out.println("\tgap=" + gap + "\ta=" + A + "\tb=" + B +
+                            "\t[a]=" + (j-gap>=0?array[j-gap]:array[0])+ "\t[b]=" + aux + "\tcambio=no");
                 }
                 array[j] = aux;
                 interacionDes++;
@@ -110,6 +132,18 @@ public class BubbleSortshell{
         for(int num :array){
             System.out.print(num + "\t");
         }
+    }
+
+    public void printArregloDez(int posUno , int posDos){
+        for(int k=0;k<posUno;k++){
+            System.out.print("\t");
+        }
+        System.out.print(array[posUno] + "\t");
+
+        for(int k=posUno+1;k<=posDos;k++){
+            System.out.print("\t");
+        }
+        System.out.println(array[posDos] + "\t");
     }
 
 }
